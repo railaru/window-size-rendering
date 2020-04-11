@@ -1,24 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import MediaSizeRender from './mediaSizeRender';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MediaSizeRender minWidth={1024} component={<p>desktop and up</p>} />
+      <MediaSizeRender minWidth={768} maxWidth={1024} component={<p>tablet only</p>} />
+      <MediaSizeRender maxWidth={1024} component={<p>tablet and lower</p>} />
     </div>
   );
 }
